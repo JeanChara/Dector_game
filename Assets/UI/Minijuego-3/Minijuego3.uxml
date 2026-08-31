@@ -1,0 +1,99 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Minijuego-3/Minijuego3.uss?fileID=7433441132597879392&amp;guid=98cd653daf7c77d42b5c0f68dffbc79d&amp;type=3#Minijuego3"/>
+    <ui:VisualElement name="minijuego3Container" class="minijuego-container">
+        <ui:VisualElement name="fondoEscuela" class="fondo-escuela"/>
+        <ui:VisualElement name="headerBar" class="header-bar">
+            <ui:Button name="btnLibro" class="btn-header-icon btn-libro"/>
+            <ui:Button name="btnConfiguracion" class="btn-header-icon btn-config"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="mainBody" class="main-body">
+            <ui:VisualElement name="reglasPanel" class="reglas-panel">
+                <ui:VisualElement name="iconoPin" class="pin-decorativo"/>
+                <ui:VisualElement class="reglas-cabecera">
+                    <ui:Label name="textoCategoria" text="Resolución del caso" class="text-categoria"/>
+                    <ui:Label name="textoTitulo" text="MINIJUEGO #3 - Selección de pistas importantes" class="text-titulo"/>
+                </ui:VisualElement>
+                <ui:Label name="textoDescripcion" text="Durante el recreo, el celular de Diego desapareció. Analiza las pistas encontradas y selecciona las 3 tarjetas que realmente ayudan a resolver el caso." class="text-descripcion"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="tableroPrincipal" class="tablero-panel">
+                <ui:VisualElement name="pistometroContainer" class="pistometro-container">
+                    <ui:Label name="pistometroLabel" text="Pistas del caso:" class="pistometro-label"/>
+                    <ui:VisualElement name="pistometroBar" class="pistometro-bar">
+                        <ui:VisualElement name="pistometroFill" class="pistometro-fill"/>
+                    </ui:VisualElement>
+                    <ui:Label name="pistometroCount" text="0/3" class="pistometro-count"/>
+                </ui:VisualElement>
+
+                <!-- Layout Interno del Tablero: Grid de 5 Tarjetas (Izquierda) + Carpeta Ilustrada (Derecha) -->
+                <ui:VisualElement name="cuerpoTableroLayout" class="cuerpo-tablero-layout">
+                    
+                    <!-- 1. Carpeta de Evidencias (Puesta PRIMERO en UXML para dibujarse al fondo) -->
+                    <ui:VisualElement name="carpetaDropzone" class="carpeta-evidencias">
+                        <ui:VisualElement class="icono-carpeta"/>
+                        <ui:Label name="textoCarpetaTitulo" text="Carpeta de Evidencias" class="texto-carpeta-titulo"/>
+                    </ui:VisualElement>
+
+                    <!-- 2. Grid de 5 Tarjetas (Puesto SEGUNDO en UXML para dibujarse ENCIMA de la carpeta) -->
+                    <ui:VisualElement name="areaTarjetas" class="area-tarjetas">
+                        
+                        <!-- Fila Inferior (Puesta PRIMERO en areaTarjetas) -->
+                        <ui:VisualElement class="fila-tarjetas fila-inferior-dos">
+                            <ui:VisualElement name="tarjeta-5" class="tarjeta-pista tarj-color-5">
+                                <ui:Label name="txt-tarjeta-5" text="Cargando pista..." class="text-pista"/>
+                                <ui:VisualElement name="sello-5" class="sello-tarjeta oculta"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="tarjeta-4" class="tarjeta-pista tarj-color-4">
+                                <ui:Label name="txt-tarjeta-4" text="Cargando pista..." class="text-pista"/>
+                                <ui:VisualElement name="sello-4" class="sello-tarjeta oculta"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+
+                        <!-- Fila Superior (Puesta SEGUNDO en areaTarjetas) -->
+                        <ui:VisualElement class="fila-tarjetas">
+                            <ui:VisualElement name="tarjeta-3" class="tarjeta-pista tarj-color-3">
+                                <ui:Label name="txt-tarjeta-3" text="Cargando pista..." class="text-pista"/>
+                                <ui:VisualElement name="sello-3" class="sello-tarjeta oculta"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="tarjeta-2" class="tarjeta-pista tarj-color-2">
+                                <ui:Label name="txt-tarjeta-2" text="Cargando pista..." class="text-pista"/>
+                                <ui:VisualElement name="sello-2" class="sello-tarjeta oculta"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="tarjeta-1" class="tarjeta-pista tarj-color-1">
+                                <ui:Label name="txt-tarjeta-1" text="Cargando pista..." class="text-pista"/>
+                                <ui:VisualElement name="sello-1" class="sello-tarjeta oculta"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+
+                    </ui:VisualElement>
+
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="footerBar" class="footer-bar">
+            <ui:Button name="btnRegresar" text="← Volver a los testimonios" class="boton-regresar"/>
+            <ui:Button name="btnFinalizarCaso" class="boton-finalizar-caso deshabilitado">
+                <ui:VisualElement name="seccionVidas" class="seccion-vidas">
+                    <ui:Label text="Vidas:" class="vidas-titulo"/>
+                    <ui:VisualElement class="placas-container">
+                        <ui:VisualElement name="vida-1" class="placa-vida activa"/>
+                        <ui:VisualElement name="vida-2" class="placa-vida activa"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement class="divisor-barra"/>
+                <ui:Label name="txtBtnFinalizar" text="Encuentra las 3 pistas" class="txt-btn-finalizar"/>
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement name="toastNotification" class="toast-notification oculta">
+            <ui:Label name="txtToast" text="" class="txt-toast"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="modalResultado" class="modal-overlay oculta">
+            <ui:VisualElement class="modal-contenido">
+                <ui:Button name="btnCerrarModal" text="×" class="cerrar-modal"/>
+                <ui:Label name="modalTitulo" text="Resumen del Caso" class="modal-titulo"/>
+                <ui:Label name="modalBody" text="" class="modal-body"/>
+                <ui:Button name="btnModalAccion" text="Continuar" class="btn-modal-accion"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

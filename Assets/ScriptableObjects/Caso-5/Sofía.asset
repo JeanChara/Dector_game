@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: "Sof\xEDa"
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: "Sof\xEDa"
+  rolTestigo: Familiar
+  fotoTarjeta: {fileID: 7862986585199876905, guid: 98a9fa3fed28c03478fdf3cee689be4d, type: 3}
+  fotoRetrato: {fileID: 7862986585199876905, guid: 98a9fa3fed28c03478fdf3cee689be4d, type: 3}
+  fotoDetalle: {fileID: 7862986585199876905, guid: 98a9fa3fed28c03478fdf3cee689be4d, type: 3}
+  textoTestimonio: "Antes de la cena coloqu\xE9 el <b>reloj</b> dentro de una peque\xF1a
+    <b>caja sobre la mesa</b> de la sala. Despu\xE9s fui a ayudar con la comida. "
+  textoTestimonioDetalle: "Sof\xEDa guard\xF3 el <b>reloj en una caja</b> sobre la
+    mesa."

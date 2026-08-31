@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1837a090c56f9244b39e08eb3ea4e40, type: 3}
+  m_Name: Caso
+  m_EditorClassIdentifier: Assembly-CSharp::DatosCaso
+  tituloCaso: "<b>CASO 2: El Misterio del H\xE1mster \"Fito\"</b>"
+  descripcionCaso: "Fito es el h\xE1mster de la Sala de Ciencias. Durante el recreo,
+    Lucas fue a darle sus semillas y descubri\xF3 que la jaula estaba abierta."
+  imagenFondo: {fileID: 21300000, guid: b77695d930d549141b2e93e6827c08d4, type: 3}
+  testigos:
+  - {fileID: 11400000, guid: 7f33cc06493a59d4d8fcd654ae00c393, type: 2}
+  - {fileID: 11400000, guid: 4b21a3d2116c26b4cbd7473cc990a88d, type: 2}
+  - {fileID: 11400000, guid: c68bb693637a49749b0566226410b60a, type: 2}
+  - {fileID: 11400000, guid: e1e2a3b4c5d6f7a8b9c0d1e2f3a4b5c6, type: 2}
+  tituloMinijuego: MINIJUEGO #3
+  nombreMinijuego: "Selecci\xF3n de Evidencias en el Pist\xF3metro"
+  descripcionMinijuego: "Fito el h\xE1mster desapareci\xF3 de su jaula durante el
+    recreo.\n\nAnaliza los testimonios y selecciona las 3 tarjetas de evidencias
+    f\xEDsicas verdaderas para completar el Pist\xF3metro y resolver el caso."
+  pistasMinijuego3:
+  - idPista: 1
+    textoPista: El broche de metal de la jaula estaba levantado hacia arriba
+    esCorrecta: 1
+  - idPista: 2
+    textoPista: "Camila ten\xEDa pelos caf\xE9s de h\xE1mster en la manga derecha
+      de su sudadera"
+    esCorrecta: 1
+  - idPista: 3
+    textoPista: "Hab\xEDa una maqueta de un volc\xE1n de plastilina en la mesa principal"
+    esCorrecta: 0
+  - idPista: 4
+    textoPista: Camila llevaba semillas de girasol en los bolsillos de su sudadera
+      oversize
+    esCorrecta: 1
+  - idPista: 5
+    textoPista: "Los aud\xEDfonos de casco de Tom\xE1s son de color negro"
+    esCorrecta: 0
+  nivelesMinijuego4:
+  - nivel: 1
+    persona: Lucas
+    pregunta: "Arrastra la nota con la contradicci\xF3n de Lucas a la Papelera"
+    opciones:
+    - id: 1
+      texto: "Lucas cerr\xF3 la jaula con el broche de seguridad antes de salir."
+      esContradiccion: 0
+      explicacion: 
+    - id: 2
+      texto: "Lucas olvid\xF3 ponerle agua a Fito y el h\xE1mster rompi\xF3 el metal."
+      esContradiccion: 1
+      explicacion: El bebedero estaba lleno y el metal intacto; el broche fue levantado
+        a mano.
+    - id: 3
+      texto: "Lucas encontr\xF3 el taz\xF3n de comida vac\xEDo al regresar."
+      esContradiccion: 0
+      explicacion: 
+    - id: 4
+      texto: "Lucas busc\xF3 a Fito cerca de los estantes de libros."
+      esContradiccion: 0
+      explicacion: 
+  - nivel: 2
+    persona: "Tom\xE1s"
+    pregunta: "Arrastra la nota con la contradicci\xF3n de Tom\xE1s a la Papelera"
+    opciones:
+    - id: 1
+      texto: "Tom\xE1s escuch\xF3 el cascabel de Fito cerca de las maquetas."
+      esContradiccion: 0
+      explicacion: 
+    - id: 2
+      texto: "Tom\xE1s vio a Fito volar por la ventana hacia el patio."
+      esContradiccion: 1
+      explicacion: "Los h\xE1msteres no vuelan; Fito estaba escondido en el aula."
+    - id: 3
+      texto: "Tom\xE1s vio a Camila salir guard\xE1ndose algo en la sudadera."
+      esContradiccion: 0
+      explicacion: 
+    - id: 4
+      texto: "Tom\xE1s ayud\xF3 a buscar a Fito debajo de los escritorios."
+      esContradiccion: 0
+      explicacion: 
+  - nivel: 3
+    persona: Camila (CULPABLE)
+    pregunta: "Arrastra la nota con la contradicci\xF3n de Camila a la Papelera"
+    opciones:
+    - id: 1
+      texto: Camila estuvo en la Sala de Ciencias observando las plantas.
+      esContradiccion: 0
+      explicacion: 
+    - id: 2
+      texto: "Camila ten\xEDa un pelo de h\xE1mster en la manga derecha de su sudadera."
+      esContradiccion: 0
+      explicacion: 
+    - id: 3
+      texto: "Camila afirma que nunca toc\xF3 la jaula y solo mir\xF3 desde la puerta."
+      esContradiccion: 1
+      explicacion: "\xA1Contradicci\xF3n delatadora! Camila ment\xEDa; ten\xEDa semillas
+        y pelos de Fito en su sudadera."
+    - id: 4
+      texto: Camila llevaba semillas de girasol en los bolsillos.
+      esContradiccion: 0
+      explicacion: 
+  textoVictoriaResumen: "\xA1Excelente trabajo de investigaci\xF3n!\n\nEstas 3 pistas
+    permitieron resolver el caso:\n\u2022 El broche de la jaula fue levantado manualmente.\n\u2022
+    Camila ten\xEDa pelos caf\xE9s de h\xE1mster en su sudadera.\n\u2022 Camila llevaba
+    semillas de girasol en sus bolsillos.\n\n\xA1Caso #2 resuelto con \xE9xito!"

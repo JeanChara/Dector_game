@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a969513cbf2605d4995420abf1af3862, type: 3}
+  m_Name: ListaCasosData
+  m_EditorClassIdentifier: Assembly-CSharp::DatosListaCasos
+  listaCasos:
+  - numeroCaso: CASO 01
+    datosCaso: {fileID: 11400000, guid: 4116f8ab3959a9d47910bee0fce8e566, type: 2}
+    nombreEscena: EscenaCaso_01
+    colorTema: {r: 0.9, g: 0.47, b: 0, a: 1}
+    colorBoton: {r: 1, g: 0.57, b: 0.17, a: 1}
+  - numeroCaso: CASO 02
+    datosCaso: {fileID: 11400000, guid: f1837a090c56f9244b39e08eb3ea4e22, type: 2}
+    nombreEscena: EscenaCaso_02
+    colorTema: {r: 0.09, g: 0.39, b: 0.67, a: 1}
+    colorBoton: {r: 0.3, g: 0.67, b: 0.97, a: 1}
+  - numeroCaso: CASO 03
+    datosCaso: {fileID: 11400000, guid: 39fd9969a29205c47b6657b375bd753e, type: 2}
+    nombreEscena: EscenaCaso_03
+    colorTema: {r: 0.17, g: 0.54, b: 0.24, a: 1}
+    colorBoton: {r: 0.32, g: 0.81, b: 0.4, a: 1}
+  - numeroCaso: CASO 04
+    datosCaso: {fileID: 11400000, guid: fe9b31c93fa130043af475b79e827b04, type: 2}
+    nombreEscena: EscenaCaso_04
+    colorTema: {r: 0.8490566, g: 0.09515847, b: 0.04966176, a: 1}
+    colorBoton: {r: 0.8415094, g: 0.41122818, b: 0.52718735, a: 1}
+  - numeroCaso: CASO 05
+    datosCaso: {fileID: 11400000, guid: d8f247224a01acf46b991f58cc3cb9ad, type: 2}
+    nombreEscena: EscenaCaso_05
+    colorTema: {r: 0.85, g: 0.28, b: 0.06, a: 1}
+    colorBoton: {r: 0.97, g: 0.4, b: 0.03, a: 1}
+  - numeroCaso: CASO 06
+    datosCaso: {fileID: 11400000, guid: 74343d7cba12c8643b9463e66fcd05d2, type: 2}
+    nombreEscena: EscenaCaso_06
+    colorTema: {r: 0.85, g: 0.28, b: 0.06, a: 1}
+    colorBoton: {r: 0.97, g: 0.4, b: 0.03, a: 1}
+  - numeroCaso: CASO 07
+    datosCaso: {fileID: 11400000, guid: 4116f8ab3959a9d47910bee0fce8e566, type: 2}
+    nombreEscena: EscenaCaso_07
+    colorTema: {r: 0, g: 0.02162028, b: 0.690566, a: 1}
+    colorBoton: {r: 0.2924527, g: 0.41976193, b: 1, a: 1}
+  - numeroCaso: CASO 08
+    datosCaso: {fileID: 11400000, guid: 4116f8ab3959a9d47910bee0fce8e566, type: 2}
+    nombreEscena: EscenaCaso_08
+    colorTema: {r: 0.5451629, g: 0.1177857, b: 0.8792453, a: 1}
+    colorBoton: {r: 0.5407864, g: 0.35552153, b: 0.6301887, a: 1}

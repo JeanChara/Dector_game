@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1837a090c56f9244b39e08eb3ea4e40, type: 3}
+  m_Name: Caso
+  m_EditorClassIdentifier: Assembly-CSharp::DatosCaso
+  tituloCaso: <b>CASO 6</b>
+  descripcionCaso: "Durante la ma\xF1ana, una persona encontr\xF3 varias huellas
+    extra\xF1as cerca del jard\xEDn de una casa."
+  testigos:
+  - {fileID: 11400000, guid: db71637a5dca18242bfc6c479f6de818, type: 2}
+  - {fileID: 11400000, guid: d419018fc0a0abc41955ba79dd884fd3, type: 2}
+  - {fileID: 11400000, guid: 7cbc9233c7aa3994f82a542db3a6993f, type: 2}
+  tituloMinijuego: MINIJUEGO #1
+  nombreMinijuego: Ordena los hechos
+  descripcionMinijuego: "Durante la ma\xF1ana, una persona encontr\xF3 huellas extra\xF1as
+    cerca del jard\xEDn de una casa.\n\nAnaliza las pistas encontradas y selecciona
+    las tarjetas  que pueden ayudar a resolver el caso."

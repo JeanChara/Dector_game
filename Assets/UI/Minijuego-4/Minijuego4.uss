@@ -1,0 +1,529 @@
+.minijuego-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1920px;
+    max-height: 1080px;
+    align-self: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+}
+
+/* Fondo Blur 100% Cobertura */
+.fondo-escuela {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('project://database/Assets/UI/Backgrounds/fondo-escuela-pasillo-blur.png?fileID=2800000&guid=b0ae33aaa5d89e443bedbe6aa7e6e84d#fondo-escuela-pasillo-blur');
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+/* HEADER BAR (Iconos Superiores) */
+.header-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
+
+.btn-header-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background-color: #1A1D1C;
+    border-width: 3px;
+    border-color: #FFFFFF;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.btn-libro {
+    background-image: url('project://database/Assets/UI/Icons/icono-libro.png?fileID=2800000&guid=e20fda57ff0dde244b310bb51f73c368#icono-libro');
+}
+
+.btn-config {
+    background-image: url('project://database/Assets/UI/Icons/icono-engranage.png?fileID=2800000&guid=3502ca2983b9d4f44bf0d4fd4442afa0#icono-engranage');
+}
+
+/* CUERPO PRINCIPAL (Main Body) */
+.main-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    flex-grow: 1;
+    min-height: 0;
+    margin-bottom: 14px;
+}
+
+/* PANEL LATERAL DE REGLAS (Izquierdo) */
+.reglas-panel {
+    width: 370px;
+    flex-shrink: 0;
+    min-height: 0;
+    background-color: #EBD7B2;
+    border-radius: 18px;
+    border-width: 4px;
+    border-color: #3E2B1E;
+    border-bottom-width: 8px;
+    border-bottom-color: #24180F;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 22px;
+}
+
+.pin-decorativo {
+    width: 48px;
+    height: 48px;
+    align-self: center;
+    margin-bottom: 12px;
+    background-image: url('project://database/Assets/UI/Sprites/pin.png?fileID=2800000&guid=165edae3205312741a22e7d47a2062d6#pin');
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.text-categoria {
+    font-size: 17px;
+    color: #7A6956;
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+.text-titulo {
+    font-size: 26px;
+    color: #2F1B08;
+    -unity-font-style: bold;
+    margin-bottom: 14px;
+    white-space: normal;
+    line-height: 33px;
+}
+
+.text-descripcion {
+    font-size: 23px;
+    color: #4A3525;
+    white-space: normal;
+    line-height: 32px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+/* TABLERO PRINCIPAL DE CORCHO (Derecho) */
+.tablero-panel {
+    flex-grow: 1;
+    min-height: 0;
+    background-color: #D4AD7B;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: #5C3818;
+    border-bottom-width: 9px;
+    border-bottom-color: #351F0B;
+    padding: 22px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ENCABEZADO DE NIVELES */
+.nivel-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.94);
+    border-radius: 14px;
+    border-width: 3px;
+    border-color: #3E2B1E;
+    padding: 10px 20px;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+}
+
+.badge-nivel {
+    background-color: #2F1B08;
+    color: #FFFFFF;
+    font-size: 18px;
+    -unity-font-style: bold;
+    padding: 6px 16px;
+    border-radius: 12px;
+}
+
+.persona-nombre {
+    font-size: 20px;
+    color: #1A1A80;
+    -unity-font-style: bold;
+}
+
+.barra-pasos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.paso-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: #E0E0E0;
+    color: #666666;
+    font-size: 16px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    border-width: 2px;
+    border-color: #BBBBBB;
+    margin: 0 4px;
+}
+
+.paso-dot.activo {
+    background-color: #F1C40F;
+    color: #2F1B08;
+    border-color: #B7950B;
+    scale: 1.15;
+}
+
+.paso-dot.completado {
+    background-color: #27AE60;
+    color: #FFFFFF;
+    border-color: #1E8449;
+}
+
+.linea-paso {
+    width: 16px;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.titulo-pregunta {
+    font-size: 21px;
+    color: #2F1B08;
+    -unity-font-style: bold;
+    background-color: rgba(255, 255, 255, 0.94);
+    border-radius: 12px;
+    border-width: 3px;
+    border-color: #5C3818;
+    padding: 10px 18px;
+    margin-bottom: 14px;
+    white-space: normal;
+    flex-shrink: 0;
+}
+
+/* CUERPO DEL CORCHO LAYOUT */
+.cuerpo-corcho-layout {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+/* GRID DE 4 NOTAS POST-IT */
+.opciones-grid {
+    width: 66%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+/* NOTAS POST-IT AMARILLAS DE PAPEL ILUSTRADO 2.5D */
+.nota-postit {
+    width: 48.5%;
+    height: 48.5%;
+    min-height: 135px;
+    background-image: url("project://database/Assets/UI/Sprites/trozo-papel-amarillo.png?fileID=2800000&guid=423ee21b6c895334cb40fdbdc045968c&type=3#trozo-papel-amarillo");
+    -unity-background-scale-mode: stretch-to-fill;
+    background-color: transparent;
+    border-width: 0;
+    padding: 26px 26px 26px 26px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nota-postit:hover {
+    scale: 1.03;
+}
+
+.pin-chinche {
+    width: 36px;
+    height: 36px;
+    background-image: url('project://database/Assets/UI/Sprites/pin.png?fileID=2800000&guid=165edae3205312741a22e7d47a2062d6#pin');
+    -unity-background-scale-mode: scale-to-fit;
+    position: absolute;
+    top: 2px;
+    align-self: center;
+}
+
+.texto-declaracion {
+    font-size: 21px;
+    color: #2C1D11;
+    -unity-font-style: bold;
+    white-space: normal;
+    -unity-text-align: middle-center;
+    flex-grow: 1;
+    margin-top: 12px;
+    line-height: 27px;
+}
+
+/* PAPELERA DE INCONSISTENCIAS (DROPZONE ILUSTRADA) */
+.papelera-dropzone {
+    width: 31%;
+    height: 100%;
+    min-height: 270px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+    background-color: transparent;
+    border-width: 0;
+}
+
+.papelera-dropzone.dropzone-activa {
+    scale: 1.05;
+}
+
+.icono-papelera {
+    width: 100%;
+    height: 84%;
+    margin-bottom: 6px;
+    background-image: url('project://database/Assets/UI/Sprites/papelera.png?fileID=2800000&guid=841aa02850198ed4fb7b1fe89fe31916&type=3#papelera');
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.texto-papelera-titulo {
+    font-size: 19px;
+    color: #2F1B08;
+    -unity-font-style: bold;
+    background-color: rgba(253, 244, 227, 0.96);
+    border-radius: 12px;
+    border-width: 3px;
+    border-color: #5C3818;
+    padding: 6px 16px;
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+/* MARCAS DE CONTRADICCIÓN Y INFORMACIÓN REAL */
+.nota-postit.correcta-marcada {
+    -unity-background-image-tint-color: rgb(169, 223, 191);
+}
+
+.nota-postit.incorrecta-marcada {
+    -unity-background-image-tint-color: rgb(250, 219, 216);
+}
+
+.sello-tarjeta {
+    font-size: 14px;
+    -unity-font-style: bold;
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+.sello-exito {
+    background-color: #27AE60;
+}
+
+.sello-error {
+    background-color: #E74C3C;
+}
+
+/* FOOTER BAR */
+.footer-bar {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.boton-regresar {
+    height: 100%;
+    width: 370px;
+    flex-shrink: 0;
+    background-color: #EBD7B2;
+    border-radius: 16px;
+    border-width: 4px;
+    border-color: #3E2B1E;
+    border-bottom-width: 7px;
+    border-bottom-color: #24180F;
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: #131313;
+    padding: 0 22px;
+}
+
+.boton-finalizar-caso {
+    flex-grow: 1;
+    height: 100%;
+    background-color: #AEF09E;
+    border-radius: 16px;
+    border-width: 4px;
+    border-color: #3E2B1E;
+    border-bottom-width: 7px;
+    border-bottom-color: #24180F;
+    margin-left: 24px;
+    padding: 0 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.seccion-vidas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.vidas-titulo {
+    font-size: 21px;
+    -unity-font-style: bold;
+    color: #131313;
+    margin-right: 14px;
+}
+
+.placas-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.placa-vida {
+    width: 62px;
+    height: 62px;
+    margin-right: 5px;
+    background-image: url("project://database/Assets/UI/Sprites/corazon.png?fileID=2800000&guid=e95d6742378394f4ea65af59ebab8950&type=3#corazon");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.placa-vida.activa {
+    opacity: 1;
+}
+
+.placa-vida.rota {
+    opacity: 0.25;
+}
+
+.divisor-barra {
+    width: 3px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 0 24px;
+}
+
+.txt-btn-finalizar {
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: #131313;
+}
+
+/* TOAST NOTIFICATION */
+.toast-notification {
+    position: absolute;
+    bottom: 90px;
+    align-self: center;
+    background-color: #1A1D1C;
+    border-radius: 22px;
+    padding: 14px 30px;
+    border-width: 3px;
+    border-color: #FFFFFF;
+}
+
+.txt-toast {
+    color: #FFFFFF;
+    font-size: 19px;
+    -unity-font-style: bold;
+}
+
+/* MODAL OVERLAY & CONTENIDO */
+.modal-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido {
+    width: 720px;
+    background-color: #EBD7B2;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: #3E2B1E;
+    padding: 38px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cerrar-modal {
+    align-self: flex-end;
+    font-size: 32px;
+    -unity-font-style: bold;
+    background-color: transparent;
+    border-width: 0;
+    color: #2F1B08;
+}
+
+.modal-titulo {
+    font-size: 30px;
+    -unity-font-style: bold;
+    color: #2F1B08;
+    margin-bottom: 20px;
+    -unity-text-align: middle-center;
+}
+
+.modal-body {
+    font-size: 23px;
+    color: #4A3525;
+    margin-bottom: 26px;
+    white-space: normal;
+    line-height: 32px;
+}
+
+.btn-modal-accion {
+    height: 60px;
+    background-color: #27AE60;
+    border-radius: 14px;
+    border-width: 3px;
+    border-color: #1E8449;
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: #FFFFFF;
+}
+
+.oculta {
+    display: none;
+}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Tomas
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: "Tom\xE1s"
+  rolTestigo: Estudiante
+  fotoTarjeta: {fileID: 21300000, guid: d3a261f53d98dcb45af1cb399434e94f, type: 3}
+  fotoRetrato: {fileID: 21300000, guid: d3a261f53d98dcb45af1cb399434e94f, type: 3}
+  fotoDetalle: {fileID: 21300000, guid: d3a261f53d98dcb45af1cb399434e94f, type: 3}
+  textoTestimonio: "Escuch\xE9 el cascabel de Fito cerca de las maquetas. <b>V\xED
+    a Camila salir guard\xE1ndose algo en la sudadera.</b>"
+  textoTestimonioDetalle: "\u201CEscuch\xE9 el sonido suave del cascabel de Fito
+    cerca del mueble de las maquetas. V\xED a Camila salir de la Sala de Ciencias
+    guard\xE1ndose algo apresuradamente en el bolsillo de su sudadera.\u201D"

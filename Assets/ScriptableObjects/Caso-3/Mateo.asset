@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Mateo
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: Mateo
+  rolTestigo: Estudiante de Arte
+  fotoTarjeta: {fileID: 21300000, guid: 4da09f539c3fb0649bbdd79cdf52029d, type: 3}
+  fotoRetrato: {fileID: 21300000, guid: 4da09f539c3fb0649bbdd79cdf52029d, type: 3}
+  fotoDetalle: {fileID: 21300000, guid: 4da09f539c3fb0649bbdd79cdf52029d, type: 3}
+  textoTestimonio: "Estaba pintando cerca. <b>V\xED a Bruno pasar apresurado con
+    un tarro de pintura azul cerca del lienzo de Sof\xEDa.</b>"
+  textoTestimonioDetalle: "\u201CEstaba pintando en el caballete contiguo al de Sof\xEDa.
+    Escuch\xE9 un ruido y v\xED a Bruno pasar apresurado llevando una paleta de mezcla
+    y un tarro abierto de pintura azul.\u201D"

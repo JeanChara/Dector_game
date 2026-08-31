@@ -1,0 +1,64 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <ui:Style src="project://database/Assets/UI/Menu-Principal/MenuPrincipal.uss?fileID=7433441132597879392&amp;guid=fa6be75d6a4f7ea478b679967c2fbd41&amp;type=3#MenuPrincipal" />
+    <ui:VisualElement name="menuContainer" class="menu-container">
+        
+        <!-- Fondo Blur de Pantalla Completa -->
+        <ui:VisualElement name="fondoEscuela" class="fondo-escuela" />
+
+        <!-- Header con Título del Juego -->
+        <ui:VisualElement name="headerMenu" class="header-menu">
+            <ui:Label name="subtituloMenu" class="txt-subtitulo" text="AGENTE DE INVESTIGACIÓN" />
+            <ui:Label name="tituloMenu" class="txt-titulo" text="EXPEDIENTES DE CASOS" />
+        </ui:VisualElement>
+
+        <!-- LAYOUT DE CARRUSEL CON PREVISUALIZACIÓN LATERAL 3D -->
+        <ui:VisualElement name="carruselLayout" class="carrusel-layout">
+
+            <!-- Botón Flecha Izquierda -->
+            <ui:Button name="btnAnteriorCaso" class="btn-nav-carrusel btn-nav-izq" text="◄" />
+
+            <!-- Previsualización Lateral Izquierda (Caso Anterior) -->
+            <ui:VisualElement name="cardCasoPrev" class="card-caso-side card-prev">
+                <ui:VisualElement name="badgeCasoPrev" class="badge-caso-side">
+                    <ui:Label name="txtBadgePrev" class="txt-badge-side" text="CASO 00" />
+                </ui:VisualElement>
+                <ui:Label name="tituloCasoPrev" class="txt-caso-titulo-side" text="Caso Anterior" />
+            </ui:VisualElement>
+
+            <!-- Visor Central de la Tarjeta del Caso Activo (Gran Tamaño 2.5D) -->
+            <ui:VisualElement name="visorCasoActivo" class="card-caso-carrusel">
+                <ui:VisualElement name="headerCard" class="card-header-row">
+                    <ui:VisualElement name="badgeCasoActivo" class="badge-caso">
+                        <ui:Label name="txtBadgeCaso" class="txt-badge" text="CASO 01" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="bodyCard" class="card-body-col">
+                    <ui:Label name="tituloCasoActivo" class="txt-caso-titulo" text="Cargando Caso..." />
+                    <ui:Label name="descCasoActivo" class="txt-caso-desc" text="Cargando descripción..." />
+                </ui:VisualElement>
+
+                <ui:Button name="btnIniciarCasoActivo" class="btn-iniciar-caso" text="Iniciar Investigación →" />
+            </ui:VisualElement>
+
+            <!-- Previsualización Lateral Derecha (Caso Siguiente) -->
+            <ui:VisualElement name="cardCasoNext" class="card-caso-side card-next">
+                <ui:VisualElement name="badgeCasoNext" class="badge-caso-side">
+                    <ui:Label name="txtBadgeNext" class="txt-badge-side" text="CASO 02" />
+                </ui:VisualElement>
+                <ui:Label name="tituloCasoNext" class="txt-caso-titulo-side" text="Caso Siguiente" />
+            </ui:VisualElement>
+
+            <!-- Botón Flecha Derecha -->
+            <ui:Button name="btnSiguienteCaso" class="btn-nav-carrusel btn-nav-der" text="►" />
+
+        </ui:VisualElement>
+
+        <!-- FOOTER PAGINADOR E INDICADORES -->
+        <ui:VisualElement name="footerCarrusel" class="footer-carrusel">
+            <ui:Label name="txtContadorCaso" class="txt-contador-caso" text="Caso 1 de 3" />
+            <ui:VisualElement name="indicadoresPuntos" class="indicadores-puntos" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

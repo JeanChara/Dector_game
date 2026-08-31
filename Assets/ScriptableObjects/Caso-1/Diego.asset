@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Diego
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: Diego Ramirez
+  rolTestigo: Estudiante
+  fotoTarjeta: {fileID: 21300000, guid: 62f3eef279df8674180d26f81289caf4, type: 3}
+  fotoRetrato: {fileID: 21300000, guid: ebbd1102298d9bf41903342d8bf89dda, type: 3}
+  fotoDetalle: {fileID: 21300000, guid: 62f3eef279df8674180d26f81289caf4, type: 3}
+  textoTestimonio: "Antes de salir al pasillo durante el receso, dej\xE9 mi celular
+    sobre mi mesa. \n\n<b>Cuando regres\xE9 al sal\xF3n, ya no estaba en la mesa.</b>"
+  textoTestimonioDetalle: "\u201CDej\xE9 mi celular sobre la mesa del sal\xF3n antes
+    de salir al pasillo durante el receso. Regres\xE9 y el celular ya no estaba.
+    Estuve busc\xE1ndolo desesperadamente.\u201D"

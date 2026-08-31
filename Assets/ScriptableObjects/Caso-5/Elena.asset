@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Elena
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: Elena
+  rolTestigo: Organizadora
+  fotoTarjeta: {fileID: -2247385656747107171, guid: 802469e412874e14b971209e5882267a, type: 3}
+  fotoRetrato: {fileID: -2247385656747107171, guid: 802469e412874e14b971209e5882267a, type: 3}
+  fotoDetalle: {fileID: -2247385656747107171, guid: 802469e412874e14b971209e5882267a, type: 3}
+  textoTestimonio: "Cuando termin\xF3 la reuni\xF3n encontr\xE9 la <b>caja debajo
+    del sof\xE1</b> junto a otros objetos que hab\xEDan ca\xEDdo."
+  textoTestimonioDetalle: "Elena encontr\xF3 la <b>caja debajo del sof\xE1</b>."

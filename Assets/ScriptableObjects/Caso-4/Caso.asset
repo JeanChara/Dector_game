@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1837a090c56f9244b39e08eb3ea4e40, type: 3}
+  m_Name: Caso
+  m_EditorClassIdentifier: Assembly-CSharp::DatosCaso
+  tituloCaso: "<b>CASO 4: El Misterio de los Aud\xEDfonos Dorados</b>"
+  descripcionCaso: "Mateo, el baterista del ensamble musical, dej\xF3 sus aud\xEDfonos
+    dorados sobre la mesa del teclado electr\xF3nico mientras sal\xEDa a beber agua.
+    Al regresar, \xA1los aud\xEDfonos hab\xEDan desaparecido!"
+  imagenFondo: {fileID: 21300000, guid: 8ca47c34799baf64f95b08c9592c70e8, type: 3}
+  testigos:
+  - {fileID: 11400000, guid: ea7300401566f9244b39e08eb3ea4e44, type: 2}
+  - {fileID: 11400000, guid: ea7100401566f9244b39e08eb3ea4e11, type: 2}
+  - {fileID: 11400000, guid: 53b400401566f9244b39e08eb3ea4e11, type: 2}
+  - {fileID: 11400000, guid: 0fe000401566f9244b39e08eb3ea4e11, type: 2}
+  tituloMinijuego: MINIJUEGO #3
+  nombreMinijuego: "Selecci\xF3n de Pistas en el Pist\xF3metro"
+  descripcionMinijuego: "Los aud\xEDfonos dorados de Mateo desaparecieron de la mesa
+    del teclado electr\xF3nico.\n\nAnaliza los testimonios y selecciona las 3 tarjetas
+    de evidencias clave para completar el Pist\xF3metro y resolver el caso."
+  pistasMinijuego3:
+  - idPista: 1
+    textoPista: "Se encontr\xF3 el conector adaptador dorado ca\xEDdo en el suelo
+      junto al pedal del teclado"
+    esCorrecta: 1
+  - idPista: 2
+    textoPista: "El cable dorado de los aud\xEDfonos sobresal\xEDa del bolsillo de
+      la sudadera roja de Sebasti\xE1n"
+    esCorrecta: 1
+  - idPista: 3
+    textoPista: "Valeria escuch\xF3 m\xFAsica suave sonando desde el interior del
+      casillero de Sebasti\xE1n"
+    esCorrecta: 1
+  - idPista: 4
+    textoPista: "Hab\xEDa un pandero de madera sobre la mesa principal del profesor"
+    esCorrecta: 0
+  - idPista: 5
+    textoPista: "La batuta del Profesor Fernando es de madera de color caf\xE9"
+    esCorrecta: 0
+  nivelesMinijuego4:
+  - nivel: 1
+    persona: Mateo
+    pregunta: "Arrastra la nota con la contradicci\xF3n de Mateo a la Papelera"
+    opciones:
+    - id: 1
+      texto: "Mateo dej\xF3 sus aud\xEDfonos dorados sobre el teclado electr\xF3nico."
+      esContradiccion: 0
+      explicacion: 
+    - id: 2
+      texto: "Mateo sali\xF3 a beber agua al pasillo por dos minutos."
+      esContradiccion: 0
+      explicacion: 
+    - id: 3
+      texto: "Un duende de la m\xFAsica sali\xF3 del piano y se llev\xF3 sus aud\xEDfonos
+        por la chimenea."
+      esContradiccion: 1
+      explicacion: "No hay duendes ni chimeneas en el aula; fue una sustracci\xF3n
+        humana."
+    - id: 4
+      texto: Mateo estuvo buscando el cable conector por el suelo.
+      esContradiccion: 0
+      explicacion: 
+  - nivel: 2
+    persona: Valeria
+    pregunta: "Arrastra la nota con la contradicci\xF3n de Valeria a la Papelera"
+    opciones:
+    - id: 1
+      texto: Valeria estaba afinando su flauta cerca del casillero.
+      esContradiccion: 0
+      explicacion: 
+    - id: 2
+      texto: "Valeria vio a los aud\xEDfonos dorados salir volando solos por la ventana."
+      esContradiccion: 1
+      explicacion: "Los objetos no vuelan; los aud\xEDfonos fueron movidos manualmente."
+    - id: 3
+      texto: "Valeria escuch\xF3 m\xFAsica suave sonando desde el casillero de Sebasti\xE1n."
+      esContradiccion: 0
+      explicacion: 
+    - id: 4
+      texto: "Valeria vio a Sebasti\xE1n cerrar su casillero apresuradamente."
+      esContradiccion: 0
+      explicacion: 
+  - nivel: 3
+    persona: "Sebasti\xE1n (CULPABLE)"
+    pregunta: "Arrastra la nota con la contradicci\xF3n delatadora de Sebasti\xE1n
+      a la Papelera"
+    opciones:
+    - id: 1
+      texto: "El Profesor Fernando encontr\xF3 el adaptador dorado ca\xEDdo en el
+        suelo."
+      esContradiccion: 0
+      explicacion: 
+    - id: 2
+      texto: "Sebasti\xE1n llevaba el cable adaptador sobresaliendo de su sudadera
+        deportiva roja."
+      esContradiccion: 0
+      explicacion: 
+    - id: 3
+      texto: "Sebasti\xE1n afirma que \xE9l jam\xE1s usa aud\xEDfonos, no sabe conectarlos
+        y estuvo en el patio comiendo una manzana sin entrar."
+      esContradiccion: 1
+      explicacion: "\xA1Contradicci\xF3n delatadora! Sebasti\xE1n ensaya con aud\xEDfonos
+        todas las semanas, Valeria lo vio dentro y el cable asomaba de su sudadera."
+    - id: 4
+      texto: "Sebasti\xE1n es aficionado a los accesorios dorados como su cadena
+        y su pulsera."
+      esContradiccion: 0
+      explicacion: 
+  textoVictoriaResumen: "\xA1Excelente trabajo de investigaci\xF3n!\n\nEstas 3 pistas
+    clave permitieron descubrir a Sebasti\xE1n:\n\u2022 Conector adaptador dorado
+    ca\xEDdo junto al pedal del teclado.\n\u2022 Cable dorado sobresaliendo del bolsillo
+    de la sudadera roja de Sebasti\xE1n.\n\u2022 M\xFAsica suave sonando dentro de
+    su casillero.\n\n\xA1Caso #4 resuelto con \xE9xito!"

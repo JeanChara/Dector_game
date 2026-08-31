@@ -1,0 +1,125 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Minijuego-4/Minijuego4.uss?fileID=7433441132597879392&amp;guid=04ae3d1185f96b44d8577f712ea90b90&amp;type=3#Minijuego4"/>
+    <ui:VisualElement name="minijuego4Container" class="minijuego-container">
+        
+        <!-- Fondo Blur de Pantalla Completa -->
+        <ui:VisualElement name="fondoEscuela" class="fondo-escuela"/>
+
+        <!-- Header con Botones de Libro y Configuración -->
+        <ui:VisualElement name="headerBar" class="header-bar">
+            <ui:Button name="btnLibro" class="btn-header-icon btn-libro"/>
+            <ui:Button name="btnConfiguracion" class="btn-header-icon btn-config"/>
+        </ui:VisualElement>
+
+        <!-- Cuerpo Principal: Panel de Reglas Izquierdo + Tablero de Corcho Derecho -->
+        <ui:VisualElement name="mainBody" class="main-body">
+            
+            <!-- Panel Lateral Izquierdo de Reglas -->
+            <ui:VisualElement name="reglasPanel" class="reglas-panel">
+                <ui:VisualElement name="iconoPin" class="pin-decorativo"/>
+                <ui:VisualElement class="reglas-cabecera">
+                    <ui:Label name="textoCategoria" text="Resolución del caso" class="text-categoria"/>
+                    <ui:Label name="textoTitulo" text="MINIJUEGO #4 - Encuentra la contradicción" class="text-titulo"/>
+                </ui:VisualElement>
+                <ui:Label name="textoDescripcion" text="Arrastra la nota con la contradicción hacia la Papelera de Inconsistencias. Completa los 3 niveles para resolver el caso." class="text-descripcion"/>
+            </ui:VisualElement>
+
+            <!-- Tablero de Corcho Derecho (Área de Evidencias y Notas) -->
+            <ui:VisualElement name="tableroPrincipal" class="tablero-panel">
+                
+                <!-- Encabezado de Niveles por Persona -->
+                <ui:VisualElement name="nivelHeader" class="nivel-header">
+                    <ui:Label name="badgeNivel" text="Nivel 1 de 3" class="badge-nivel"/>
+                    <ui:Label name="personaNombre" text="Analizando a: Diego Ramírez" class="persona-nombre"/>
+                    <ui:VisualElement name="barraPasos" class="barra-pasos">
+                        <ui:Label name="paso-1" text="1" class="paso-dot activo"/>
+                        <ui:VisualElement class="linea-paso"/>
+                        <ui:Label name="paso-2" text="2" class="paso-dot"/>
+                        <ui:VisualElement class="linea-paso"/>
+                        <ui:Label name="paso-3" text="3" class="paso-dot"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <!-- Título e Instrucción del Nivel -->
+                <ui:Label name="tituloPregunta" text="Arrastra la nota con la contradicción a la Papelera" class="titulo-pregunta"/>
+
+                <!-- Layout Principal del Corcho: Grid de 4 Post-its + Papelera Dropzone -->
+                <ui:VisualElement name="cuerpoCorchoLayout" class="cuerpo-corcho-layout">
+                    
+                    <!-- Papelera de Inconsistencias (Dropzone Ilustrada) -->
+                    <ui:VisualElement name="papeleraDropzone" class="papelera-dropzone">
+                        <ui:VisualElement class="icono-papelera"/>
+                        <ui:Label text="Papelera de Inconsistencias" class="texto-papelera-titulo"/>
+                    </ui:VisualElement>
+
+                    <!-- Grid 2x2 de Notas Adhesivas Amarillas colocado segundo para dibujado encima -->
+                    <ui:VisualElement name="opcionesGrid" class="opciones-grid">
+                        
+                        <!-- Post-it 1 -->
+                        <ui:VisualElement name="postit-1" class="nota-postit postit-color-1">
+                            <ui:VisualElement class="pin-chinche"/>
+                            <ui:Label name="txt-postit-1" text="Cargando declaración..." class="texto-declaracion"/>
+                            <ui:Label name="sello-1" text="" class="sello-tarjeta oculta"/>
+                        </ui:VisualElement>
+
+                        <!-- Post-it 2 -->
+                        <ui:VisualElement name="postit-2" class="nota-postit postit-color-2">
+                            <ui:VisualElement class="pin-chinche"/>
+                            <ui:Label name="txt-postit-2" text="Cargando declaración..." class="texto-declaracion"/>
+                            <ui:Label name="sello-2" text="" class="sello-tarjeta oculta"/>
+                        </ui:VisualElement>
+
+                        <!-- Post-it 3 -->
+                        <ui:VisualElement name="postit-3" class="nota-postit postit-color-3">
+                            <ui:VisualElement class="pin-chinche"/>
+                            <ui:Label name="txt-postit-3" text="Cargando declaración..." class="texto-declaracion"/>
+                            <ui:Label name="sello-3" text="" class="sello-tarjeta oculta"/>
+                        </ui:VisualElement>
+
+                        <!-- Post-it 4 -->
+                        <ui:VisualElement name="postit-4" class="nota-postit postit-color-4">
+                            <ui:VisualElement class="pin-chinche"/>
+                            <ui:Label name="txt-postit-4" text="Cargando declaración..." class="texto-declaracion"/>
+                            <ui:Label name="sello-4" text="" class="sello-tarjeta oculta"/>
+                        </ui:VisualElement>
+
+                    </ui:VisualElement>
+
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Barra Inferior (Botón Regresar + Seccion de Vidas) -->
+        <ui:VisualElement name="footerBar" class="footer-bar">
+            <ui:Button name="btnRegresar" text="← Volver a los testimonios" class="boton-regresar"/>
+            <ui:VisualElement name="btnFinalizarCaso" class="boton-finalizar-caso">
+                <ui:VisualElement name="seccionVidas" class="seccion-vidas">
+                    <ui:Label text="Vidas:" class="vidas-titulo"/>
+                    <ui:VisualElement class="placas-container">
+                        <ui:VisualElement name="vida-1" class="placa-vida activa"/>
+                        <ui:VisualElement name="vida-2" class="placa-vida activa"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement class="divisor-barra"/>
+                <ui:Label name="txtBtnFinalizar" text="Arrastra la nota falsa a la papelera (Nivel 1)" class="txt-btn-finalizar"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Notificación Toast -->
+        <ui:VisualElement name="toastNotification" class="toast-notification oculta">
+            <ui:Label name="txtToast" text="" class="txt-toast"/>
+        </ui:VisualElement>
+
+        <!-- Modal de Resultado / Victoria / Derrota -->
+        <ui:VisualElement name="modalResultado" class="modal-overlay oculta">
+            <ui:VisualElement class="modal-contenido">
+                <ui:Button name="btnCerrarModal" text="×" class="cerrar-modal"/>
+                <ui:Label name="modalTitulo" text="Resultado del Análisis" class="modal-titulo"/>
+                <ui:Label name="modalBody" text="" class="modal-body"/>
+                <ui:Button name="btnModalAccion" text="Continuar" class="btn-modal-accion"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

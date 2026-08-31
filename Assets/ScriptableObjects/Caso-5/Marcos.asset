@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Marcos
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: Marcos
+  rolTestigo: Invitado
+  fotoTarjeta: {fileID: 5320492738475360395, guid: 7a4cbad86a444844aa0a9ab31036e22e, type: 3}
+  fotoRetrato: {fileID: 5320492738475360395, guid: 7a4cbad86a444844aa0a9ab31036e22e, type: 3}
+  fotoDetalle: {fileID: 5320492738475360395, guid: 7a4cbad86a444844aa0a9ab31036e22e, type: 3}
+  textoTestimonio: Mientras esperaba la cena, vi que una <b>ventana estaba abierta</b>
+    y algunas hojas entraron a la sala cerca de la mesa.
+  textoTestimonioDetalle: Marcos vio una <b>ventana abierta</b> cerca de la mesa.

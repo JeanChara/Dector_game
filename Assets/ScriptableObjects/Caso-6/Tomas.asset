@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Tomas
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: Tomas
+  rolTestigo: Vecino
+  fotoTarjeta: {fileID: -397779563637243037, guid: a7101762174849d4bbd1bfb8cc3407d6, type: 3}
+  fotoRetrato: {fileID: -397779563637243037, guid: a7101762174849d4bbd1bfb8cc3407d6, type: 3}
+  fotoDetalle: {fileID: -397779563637243037, guid: a7101762174849d4bbd1bfb8cc3407d6, type: 3}
+  textoTestimonio: "Muy temprano vi un <b>animal peque\xF1o cerca del jard\xEDn</b>.
+    \n\nTambi\xE9n observ\xE9 unas <b>huellas alrededor de la mesa</b>."
+  textoTestimonioDetalle: "Tom\xE1s vio un <b>animal peque\xF1o y huellas peque\xF1as
+    cerca del jard\xEDn</b>."
