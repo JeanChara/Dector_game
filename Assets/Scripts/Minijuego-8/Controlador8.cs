@@ -21,14 +21,19 @@ public class Controlador8 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoBotonFinalizar;
     [SerializeField] private TextMeshProUGUI textoAlertaRapida; // Mensajes rápidos en pantalla
 
+    [Header("Indicador Visual de Vidas (Corazones)")]
+    [SerializeField] private GameObject[] iconosCorazones;
+
     [Header("Pantalla de Feedback Reutilizable")]
     [SerializeField] private PanelFeedbackReutilizable panelFeedback;
 
     [Header("Navegación")]
     [SerializeField] private NavegacionPrincipal navegacionPrincipal;
+    [SerializeField] private bool volverAlMenuPrincipalAlResolver = true;
 
     private int intentosMaximos = 3;
     private int intentosRestantes;
+    private Coroutine alertaCoroutine;
 
     private void Start()
     {
@@ -41,7 +46,10 @@ public class Controlador8 : MonoBehaviour
         // Suscribirse a los eventos del panel de feedback
         if (panelFeedback != null)
         {
+            panelFeedback.AlContinuar.RemoveAllListeners();
             panelFeedback.AlContinuar.AddListener(AlResolverExitosamente);
+
+            panelFeedback.AlReintentar.RemoveAllListeners();
             panelFeedback.AlReintentar.AddListener(ResetMinijuego);
         }
 
@@ -69,14 +77,14 @@ public class Controlador8 : MonoBehaviour
                     dragCard.parentAfterDrag = panelHechosOriginales.transform;
                     tarjeta.transform.SetParent(panelHechosOriginales.transform);
                 }
-                
+
                 // Restaurar color original de la tarjeta
                 var img = tarjeta.GetComponent<UnityEngine.UI.Image>();
                 if (img != null)
                 {
                     img.color = new Color(32f/255f, 138f/255f, 151f/255f, 1f);
                 }
-                
+
                 tarjeta.transform.localPosition = Vector3.zero;
             }
         }
@@ -106,7 +114,7 @@ public class Controlador8 : MonoBehaviour
 
         if (!todosLlenos)
         {
-            MostrarAlertaRapida("<color=red>¡Aún quedan espacios vacíos! Coloca todas las palabras para finalizar.</color>");
+            MostrarAlertaRapida("¡Aún quedan espacios vacíos! Coloca todas las palabras para finalizar.");
             return;
         }
 
@@ -119,7 +127,6 @@ public class Controlador8 : MonoBehaviour
             TarjetaHecho tarjeta = colocadas[i];
             int indiceSlotEsperado = slotsOrden[i].indiceSlot; // El ID que exige este slot en específico
 
-            // Comparamos el ID de la tarjeta con el ID requerido por el slot
             if (tarjeta.idCronologico == indiceSlotEsperado)
             {
                 // Bloquear y oscurecer tarjeta correcta
@@ -132,7 +139,7 @@ public class Controlador8 : MonoBehaviour
                 var img = tarjeta.GetComponent<UnityEngine.UI.Image>();
                 if (img != null)
                 {
-                    img.color = new Color(15f/255f, 68f/255f, 75f/255f, 1f); 
+                    img.color = new Color(15f/255f, 68f/255f, 75f/255f, 1f);
                 }
             }
             else
@@ -148,8 +155,8 @@ public class Controlador8 : MonoBehaviour
             // ÉXITO PEDAGÓGICO
             string titulo = "¡Excelente Trabajo, Detective!";
             string mensaje = "Lograste completar los espacios en blanco correctamente.";
-            
-            string resumenPedagogico = 
+
+            string resumenPedagogico =
                 "<b>¿Cómo ocurrió el caso?</b>\n\n" +
                 "1. Alguien se acercó sigilosamente durante el <b>recreo</b> cuando el aula estaba vacía.\n" +
                 "2. Encontraron el <b>celular</b> escondido al fondo del casillero del pasillo.\n\n" +
@@ -183,14 +190,14 @@ public class Controlador8 : MonoBehaviour
 
             if (intentosRestantes > 0)
             {
-                MostrarAlertaRapida("<color=orange>¡Algunas palabras no son correctas! Fueron devueltas abajo. Inténtalo de nuevo.</color>");
+                MostrarAlertaRapida("¡Algunas palabras no son correctas! Fueron devueltas abajo. Inténtalo de nuevo.");
             }
             else
             {
                 // SIN INTENTOS
                 string tituloDerrota = "¡Oh no, se acabaron los intentos!";
                 string mensajeDerrota = "Lee con mucha atención los detalles del caso. ¡Tómate tu tiempo y vuelve a intentarlo!";
-                
+
                 if (panelFeedback != null)
                 {
                     panelFeedback.MostrarDerrota(tituloDerrota, mensajeDerrota);
@@ -205,9 +212,26 @@ public class Controlador8 : MonoBehaviour
 
     private void ActualizarTextoIntentos()
     {
-        if (textoBotonFinalizar != null)
+        if (iconosCorazones != null && iconosCorazones.Length > 0)
         {
-            textoBotonFinalizar.text = $"Finalizar caso (intentos restantes: {intentosRestantes}/{intentosMaximos})";
+            if (textoBotonFinalizar != null)
+            {
+                textoBotonFinalizar.text = "Finalizar caso";
+            }
+            for (int i = 0; i < iconosCorazones.Length; i++)
+            {
+                if (iconosCorazones[i] != null)
+                {
+                    iconosCorazones[i].SetActive(i < intentosRestantes);
+                }
+            }
+        }
+        else
+        {
+            if (textoBotonFinalizar != null)
+            {
+                textoBotonFinalizar.text = $"Finalizar caso (intentos restantes: {intentosRestantes}/{intentosMaximos})";
+            }
         }
     }
 
@@ -216,14 +240,67 @@ public class Controlador8 : MonoBehaviour
         if (textoAlertaRapida != null)
         {
             textoAlertaRapida.text = texto;
+
+            var parent = textoAlertaRapida.transform.parent;
+            if (parent != null)
+            {
+                var group = parent.GetComponent<CanvasGroup>();
+                if (group == null) group = parent.gameObject.AddComponent<CanvasGroup>();
+
+                if (alertaCoroutine != null) StopCoroutine(alertaCoroutine);
+                alertaCoroutine = StartCoroutine(AnimarAlerta(group));
+            }
         }
+    }
+
+    private System.Collections.IEnumerator AnimarAlerta(CanvasGroup group)
+    {
+        group.gameObject.SetActive(true);
+
+        // Fade In
+        float t = 0f;
+        while (t < 0.2f)
+        {
+            t += Time.deltaTime;
+            group.alpha = Mathf.Lerp(0f, 1f, t / 0.2f);
+            yield return null;
+        }
+        group.alpha = 1f;
+
+        // Wait
+        yield return new WaitForSeconds(3.0f);
+
+        // Fade Out
+        t = 0f;
+        while (t < 0.3f)
+        {
+            t += Time.deltaTime;
+            group.alpha = Mathf.Lerp(1f, 0f, t / 0.3f);
+            yield return null;
+        }
+        group.alpha = 0f;
+        group.gameObject.SetActive(false);
     }
 
     private void AlResolverExitosamente()
     {
-        if (navegacionPrincipal != null)
+        if (volverAlMenuPrincipalAlResolver)
         {
-            navegacionPrincipal.VolverATestimonios();
+            if (navegacionPrincipal != null)
+            {
+                navegacionPrincipal.VolverAlMenuPrincipal();
+            }
+            else
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MenuPrincipal");
+            }
+        }
+        else
+        {
+            if (navegacionPrincipal != null)
+            {
+                navegacionPrincipal.VolverATestimonios();
+            }
         }
     }
 }
