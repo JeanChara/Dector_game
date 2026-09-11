@@ -271,3 +271,41 @@
 .oculta {
     display: none;
 }
+
+
+/* BOTÓN DE SALIR (ARRIBA A LA IZQUIERDA) */
+.btn-salir-juego {
+    z-index: 100;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background-color: rgba(36, 24, 15, 0.95);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    -unity-font-style: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left-color: rgb(62, 43, 30);
+    border-right-color: rgb(62, 43, 30);
+    border-top-color: rgb(62, 43, 30);
+    border-bottom-color: rgb(62, 43, 30);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    transition-duration: 0.1s;
+}
+
+.btn-salir-juego:hover {
+    background-color: rgba(62, 43, 30, 0.95);
+}
+
+.btn-salir-juego:active {
+    scale: 0.92 0.92;
+}

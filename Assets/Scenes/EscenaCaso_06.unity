@@ -9729,6 +9729,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2675443289366737610, guid: 4b27b527df02321458c3c618a89dfa05, type: 3}
+      propertyPath: casoActual
+      value: 
+      objectReference: {fileID: 11400000, guid: 74343d7cba12c8643b9463e66fcd05d2, type: 2}
     - target: {fileID: 4929943102688253639, guid: 4b27b527df02321458c3c618a89dfa05, type: 3}
       propertyPath: m_sharedMaterial
       value: 

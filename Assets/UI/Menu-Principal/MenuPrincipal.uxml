@@ -1,10 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
     <ui:Style src="project://database/Assets/UI/Menu-Principal/MenuPrincipal.uss?fileID=7433441132597879392&amp;guid=fa6be75d6a4f7ea478b679967c2fbd41&amp;type=3#MenuPrincipal" />
     <ui:VisualElement name="menuContainer" class="menu-container">
-        
-        <!-- Fondo Blur de Pantalla Completa -->
+
+        <!-- Fondo Blur de Pantalla Completa (Puesto al inicio para estar al fondo) -->
         <ui:VisualElement name="fondoEscuela" class="fondo-escuela" />
 
+        <!-- Botón de Salida (Arriba a la Izquierda) -->
+        <ui:Button name="btnSalirJuego" class="btn-salir-juego" text="✕  SALIR" />
+        
         <!-- Header con Título del Juego -->
         <ui:VisualElement name="headerMenu" class="header-menu">
             <ui:Label name="subtituloMenu" class="txt-subtitulo" text="AGENTE DE INVESTIGACIÓN" />

@@ -27,6 +27,7 @@ public class ControladorMenuPrincipal : MonoBehaviour
     private Button btnIniciarCasoActivo;
     private Label txtContadorCaso;
     private VisualElement indicadoresPuntos;
+    private Button btnSalirJuego;
 
     // Previsualización Lateral Izquierda (Caso Anterior)
     private VisualElement cardCasoPrev;
@@ -62,6 +63,52 @@ public class ControladorMenuPrincipal : MonoBehaviour
     public void InicializarUI()
     {
         if (root == null) return;
+
+        // Configurar Botón de Salir (Arriba a la Izquierda)
+        btnSalirJuego = root.Q<Button>("btnSalirJuego");
+        if (btnSalirJuego == null)
+        {
+            btnSalirJuego = new Button();
+            btnSalirJuego.name = "btnSalirJuego";
+            btnSalirJuego.text = "✕  SALIR";
+            btnSalirJuego.style.position = Position.Absolute;
+            btnSalirJuego.style.top = 25;
+            btnSalirJuego.style.left = 25;
+            btnSalirJuego.style.backgroundColor = new Color(0.141f, 0.094f, 0.059f, 0.95f);
+            btnSalirJuego.style.color = Color.white;
+            btnSalirJuego.style.fontSize = 15;
+            btnSalirJuego.style.unityFontStyleAndWeight = FontStyle.Bold;
+            btnSalirJuego.style.borderTopLeftRadius = 10;
+            btnSalirJuego.style.borderTopRightRadius = 10;
+            btnSalirJuego.style.borderBottomLeftRadius = 10;
+            btnSalirJuego.style.borderBottomRightRadius = 10;
+            btnSalirJuego.style.paddingLeft = 18;
+            btnSalirJuego.style.paddingRight = 18;
+            btnSalirJuego.style.paddingTop = 10;
+            btnSalirJuego.style.paddingBottom = 10;
+            btnSalirJuego.style.borderLeftColor = new Color(0.243f, 0.169f, 0.118f, 1f);
+            btnSalirJuego.style.borderRightColor = new Color(0.243f, 0.169f, 0.118f, 1f);
+            btnSalirJuego.style.borderTopColor = new Color(0.243f, 0.169f, 0.118f, 1f);
+            btnSalirJuego.style.borderBottomColor = new Color(0.243f, 0.169f, 0.118f, 1f);
+            btnSalirJuego.style.borderLeftWidth = 2;
+            btnSalirJuego.style.borderRightWidth = 2;
+            btnSalirJuego.style.borderTopWidth = 2;
+            btnSalirJuego.style.borderBottomWidth = 2;
+            root.Add(btnSalirJuego);
+        }
+
+        if (btnSalirJuego != null)
+        {
+            btnSalirJuego.clicked -= SalirDelJuego;
+            btnSalirJuego.clicked += SalirDelJuego;
+            btnSalirJuego.BringToFront();
+            btnSalirJuego.RegisterCallback<PointerDownEvent>(evt => {
+                btnSalirJuego.style.scale = new Scale(new Vector3(0.92f, 0.92f, 1f));
+            });
+            btnSalirJuego.RegisterCallback<PointerUpEvent>(evt => {
+                btnSalirJuego.style.scale = new Scale(new Vector3(1f, 1f, 1f));
+            });
+        }
 
         if (estiloMenu != null && !root.styleSheets.Contains(estiloMenu))
         {
@@ -366,6 +413,15 @@ public class ControladorMenuPrincipal : MonoBehaviour
     {
         Debug.Log($"[ControladorMenuPrincipal] Cargando escena: {nombreEscena}");
         SceneManager.LoadScene(nombreEscena);
+    }
+
+    public void SalirDelJuego()
+    {
+        Debug.Log("[ControladorMenuPrincipal] Saliendo del juego...");
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
     private Color MultiplyColor(Color c, float factor)
