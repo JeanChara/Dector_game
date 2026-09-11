@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
   m_Name: Diego
   m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
-  nombreTestigo: Diego Ramirez
-  rolTestigo: Estudiante
-  fotoTarjeta: {fileID: 21300000, guid: 62f3eef279df8674180d26f81289caf4, type: 3}
-  fotoRetrato: {fileID: 21300000, guid: ebbd1102298d9bf41903342d8bf89dda, type: 3}
-  fotoDetalle: {fileID: 21300000, guid: 62f3eef279df8674180d26f81289caf4, type: 3}
-  textoTestimonio: "Antes de salir al pasillo durante el receso, dej\xE9 mi celular
-    sobre mi mesa. \n\n<b>Cuando regres\xE9 al sal\xF3n, ya no estaba en la mesa.</b>"
-  textoTestimonioDetalle: "\u201CDej\xE9 mi celular sobre la mesa del sal\xF3n antes
-    de salir al pasillo durante el receso. Regres\xE9 y el celular ya no estaba.
-    Estuve busc\xE1ndolo desesperadamente.\u201D"
+  nombreTestigo: Diego
+  rolTestigo: Profesor
+  fotoTarjeta: {fileID: 1794711888724334008, guid: 3f1b3afdcf4ffa149a4b7b13d5988e94, type: 3}
+  fotoRetrato: {fileID: 1794711888724334008, guid: 3f1b3afdcf4ffa149a4b7b13d5988e94, type: 3}
+  fotoDetalle: {fileID: 1794711888724334008, guid: 3f1b3afdcf4ffa149a4b7b13d5988e94, type: 3}
+  textoTestimonio: "Durante el recreo estuve en el patio organizando un partido.
+    Despu\xE9s fui al almac\xE9n para guardar <b>varios balones</b> que hab\xEDan
+    quedado afuera."
+  textoTestimonioDetalle: "Diego estuvo en el patio y luego llev\xF3 <b>balones al
+    almac\xE9n</b>."

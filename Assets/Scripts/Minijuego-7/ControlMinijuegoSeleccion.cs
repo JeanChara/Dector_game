@@ -6,7 +6,7 @@ public class ControlMinijuegoSeleccion : MonoBehaviour
 {
     [Header("Testimonio a Mostrar")]
     [SerializeField] private TextMeshProUGUI textoTestimonioUI;
-    [TextArea]
+    [TextArea(2, 4)]
     [SerializeField] private string testimonioDelCaso = "Vi a alguien que llevaba algo muy pesado y caminaba lento. ¡Tenía las manos manchadas de tiza azul!";
 
     [Header("Configuración de Sospechosos")]
@@ -18,61 +18,74 @@ public class ControlMinijuegoSeleccion : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoBotonFinalizar;
 
     [Header("Referencias de Feedback")]
-    [SerializeField] private PanelFeedbackReutilizable panelFeedback; // Arrastra el objeto que tiene el script de tu compañero
+    [SerializeField] private PanelFeedbackReutilizable panelFeedback;
     [SerializeField] private int intentosRestantes = 3;
     [SerializeField] private bool volverAlMenuPrincipalAlResolver = true;
     [SerializeField] private string nombreEscenaMenuPrincipal = "MenuPrincipal";
 
     [Header("Indicador Visual de Vidas (Corazones)")]
-    [SerializeField] private GameObject[] iconosCorazones; // 3 objetos de corazones
+    [SerializeField] private GameObject[] iconosCorazones;
     [SerializeField] private TextMeshProUGUI textoAlertaRapida;
     [SerializeField] private CanvasGroup panelAlertaCanvasGroup;
 
-    private int indiceSeleccionado = -1;
+        [Header("Textos de Alerta Flotante (Toast)")]
+    [SerializeField] private string alertaSinSeleccion = "Por favor, selecciona a un sospechoso antes de finalizar.";
+    [SerializeField] private string alertaIncorrecto = "¡Sospechoso incorrecto! Te quedan {0} intentos. Relee los testimonios en tu libreta.";
 
-    void Start()
+    [Header("Textos Personalizables de Feedback (Victoria)")]
+    [SerializeField] private string tituloVictoria = "¡Excelente Trabajo, Detective!";
+    [SerializeField] private string mensajeVictoria = "Has hallado al sospechoso correcto.";
+    [SerializeField] [TextArea(3, 6)] private string resumenPedagogicoVictoria = "1. Analizaste el testimonio.\n2. Verificaste las pistas de la tiza.\n3. Identificaste al culpable con éxito.";
+
+    [Header("Textos Personalizables de Feedback (Derrota)")]
+    [SerializeField] private string tituloDerrota = "¡Se acabaron los intentos!";
+    [SerializeField] [TextArea(2, 4)] private string mensajeDerrota = "Has agotado tus 3 oportunidades en este caso. Relee atentamente las pistas e inténtalo de nuevo.";
+
+    private int indexSeleccionadoActual = -1;
+    private int maxIntentos;
+    private Coroutine alertaCoroutine;
+
+    private void Start()
     {
-        // Mostrar el testimonio inicial
-        if (textoTestimonioUI != null)
-        {
-            textoTestimonioUI.text = testimonioDelCaso;
-        }
+        maxIntentos = intentosRestantes;
 
         // Configurar los botones de los sospechosos de forma dinámica
         for (int i = 0; i < sospechosos.Length; i++)
         {
-            int indexLocal = i; // Necesario para la closure de C#
+            int indexLocal = i;
             if (sospechosos[i].botonContenedor != null)
             {
-                // Rellenar datos visuales
                 if (sospechosos[i].imagenRetrato != null && sospechosos[i].spriteRetrato != null)
                     sospechosos[i].imagenRetrato.sprite = sospechosos[i].spriteRetrato;
 
                 if (sospechosos[i].textoAccion != null)
                     sospechosos[i].textoAccion.text = sospechosos[i].descripcionAccion;
 
-                // Escuchar el clic en cada contenedor/botón
+                sospechosos[i].botonContenedor.onClick.RemoveAllListeners();
                 sospechosos[i].botonContenedor.onClick.AddListener(() => SeleccionarSospechoso(indexLocal));
             }
 
-            // Apagar los indicadores visuales al iniciar
+            // Ocultar indicadores visuales al inicio
             if (sospechosos[i].panelSeleccionIndicador != null)
             {
                 sospechosos[i].panelSeleccionIndicador.SetActive(false);
             }
         }
 
-        // Configurar el botón verde de validar
-        if (botonFinalizar != null)
+        // Cargar texto del testimonio inicial
+        if (textoTestimonioUI != null)
         {
-            botonFinalizar.onClick.AddListener(VerificarRespuesta);
-            if (textoBotonFinalizar == null)
-            {
-                textoBotonFinalizar = botonFinalizar.GetComponentInChildren<TextMeshProUGUI>();
-            }
+            textoTestimonioUI.text = testimonioDelCaso;
         }
 
-        // Configurar eventos de continuación o reintento en el panel de feedback
+        // Configurar botón finalizar
+        if (botonFinalizar != null)
+        {
+            botonFinalizar.onClick.RemoveAllListeners();
+            botonFinalizar.onClick.AddListener(ValidarSeleccion);
+        }
+
+        // Suscribirse a eventos del panel reutilizable
         if (panelFeedback != null)
         {
             panelFeedback.AlContinuar.RemoveAllListeners();
@@ -85,49 +98,30 @@ public class ControlMinijuegoSeleccion : MonoBehaviour
         ActualizarUIIntentos();
     }
 
-    public void SeleccionarSospechoso(int indice)
+    private void SeleccionarSospechoso(int index)
     {
-        indiceSeleccionado = indice;
-        Debug.Log("Sospechoso seleccionado: " + indice);
+        indexSeleccionadoActual = index;
 
-        // Recorremos los sospechosos: activamos el indicador del seleccionado y mantenemos el estilo 2.5D intacto
+        // Recorremos los sospechosos: activamos el indicador del seleccionado
         for (int i = 0; i < sospechosos.Length; i++)
         {
-            bool esEsteSeleccionado = (i == indiceSeleccionado);
-            
+            bool esEsteSeleccionado = (i == index);
             if (sospechosos[i].panelSeleccionIndicador != null)
             {
                 sospechosos[i].panelSeleccionIndicador.SetActive(esEsteSeleccionado);
-            }
-
-            if (sospechosos[i].botonContenedor != null)
-            {
-                var img = sospechosos[i].botonContenedor.GetComponent<Image>();
-                if (img != null)
-                {
-                    // Tono cálido/dorado suave para el seleccionado sin quitar los bordes
-                    img.color = esEsteSeleccionado ? new Color(1.0f, 0.96f, 0.82f, 1.0f) : Color.white;
-                }
             }
         }
     }
 
     private void ActualizarUIIntentos()
     {
-        // 1. Sincronizar texto del botón "Finalizar caso (intentos restantes: X/3)"
-        if (textoBotonFinalizar == null && botonFinalizar != null)
+        if (iconosCorazones != null && iconosCorazones.Length > 0)
         {
-            textoBotonFinalizar = botonFinalizar.GetComponentInChildren<TextMeshProUGUI>();
-        }
+            if (textoBotonFinalizar != null)
+            {
+                textoBotonFinalizar.text = "Finalizar caso";
+            }
 
-        if (textoBotonFinalizar != null)
-        {
-            textoBotonFinalizar.text = $"Finalizar caso (intentos restantes: {intentosRestantes}/3)";
-        }
-
-        // 2. Sincronizar iconos de corazones
-        if (iconosCorazones != null)
-        {
             for (int i = 0; i < iconosCorazones.Length; i++)
             {
                 if (iconosCorazones[i] != null)
@@ -136,22 +130,27 @@ public class ControlMinijuegoSeleccion : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            if (textoBotonFinalizar != null)
+            {
+                textoBotonFinalizar.text = $"Finalizar caso (intentos restantes: {intentosRestantes}/{maxIntentos})";
+            }
+        }
     }
-
-    private Coroutine alertaCoroutine;
 
     private void MostrarAlertaRapida(string texto)
     {
         if (textoAlertaRapida != null)
         {
             textoAlertaRapida.text = texto;
-            
+
             var parent = textoAlertaRapida.transform.parent;
             if (parent != null)
             {
                 var group = parent.GetComponent<CanvasGroup>();
                 if (group == null) group = parent.gameObject.AddComponent<CanvasGroup>();
-                
+
                 if (alertaCoroutine != null) StopCoroutine(alertaCoroutine);
                 alertaCoroutine = StartCoroutine(AnimarAlerta(group));
             }
@@ -161,8 +160,7 @@ public class ControlMinijuegoSeleccion : MonoBehaviour
     private System.Collections.IEnumerator AnimarAlerta(CanvasGroup group)
     {
         group.gameObject.SetActive(true);
-        group.alpha = 0f;
-        
+
         // Fade In
         float t = 0f;
         while (t < 0.2f)
@@ -173,7 +171,7 @@ public class ControlMinijuegoSeleccion : MonoBehaviour
         }
         group.alpha = 1f;
 
-        // Mantener visible
+        // Wait
         yield return new WaitForSeconds(3.0f);
 
         // Fade Out
@@ -188,22 +186,24 @@ public class ControlMinijuegoSeleccion : MonoBehaviour
         group.gameObject.SetActive(false);
     }
 
-    public void VerificarRespuesta()
+    public void ValidarSeleccion()
     {
-        if (indiceSeleccionado == -1)
+        // Si no se ha elegido ninguno
+        if (indexSeleccionadoActual == -1)
         {
-            MostrarAlertaRapida("Por favor, selecciona a un sospechoso antes de finalizar.");
+            MostrarAlertaRapida(alertaSinSeleccion);
             return;
         }
 
-        if (indiceSeleccionado == indiceSospechosoCorrecto)
+        // Si la selección es correcta
+        if (indexSeleccionadoActual == indiceSospechosoCorrecto)
         {
             if (panelFeedback != null)
             {
                 panelFeedback.MostrarExito(
-                    "¡Excelente Trabajo, Detective!", 
-                    "Has hallado al sospechoso correcto.", 
-                    "1. Analizaste el testimonio.\n2. Verificaste las pistas de la tiza.\n3. Identificaste al culpable con éxito."
+                    tituloVictoria,
+                    mensajeVictoria,
+                    resumenPedagogicoVictoria
                 );
             }
         }
@@ -211,20 +211,18 @@ public class ControlMinijuegoSeleccion : MonoBehaviour
         {
             intentosRestantes--;
             ActualizarUIIntentos();
-            
+
             if (intentosRestantes > 0)
             {
-                // Muestra alerta emergente Toast sin cerrar el minijuego ni reiniciar el caso
-                MostrarAlertaRapida($"¡Sospechoso incorrecto! Te quedan {intentosRestantes} intentos. Relee los testimonios en tu libreta.");
+                MostrarAlertaRapida(string.Format(alertaIncorrecto, intentosRestantes));
             }
             else
             {
-                // Agotó los 3 intentos: muestra pantalla de derrota final para reintentar
                 if (panelFeedback != null)
                 {
                     panelFeedback.MostrarDerrota(
-                        "¡Se acabaron los intentos!", 
-                        "Has agotado tus 3 oportunidades en este caso. Relee atentamente las pistas e inténtalo de nuevo."
+                        tituloDerrota,
+                        mensajeDerrota
                     );
                 }
             }
@@ -257,7 +255,7 @@ public struct SuspectData
     public Sprite spriteRetrato;
     public TextMeshProUGUI textoAccion;
     [TextArea] public string descripcionAccion;
-    
+
     [Header("Indicador Visual")]
-    public GameObject panelSeleccionIndicador; // El panel o marco de color que se encenderá al hacer clic
+    public GameObject panelSeleccionIndicador;
 }

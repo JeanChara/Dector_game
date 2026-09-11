@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1837a090c56f9244b39e08eb3ea4e40, type: 3}
   m_Name: Caso
   m_EditorClassIdentifier: Assembly-CSharp::DatosCaso
-  tituloCaso: <b>CASO 6</b>
+  tituloCaso: "<b>CASO 6: Las huellas extra\xF1as</b>"
   descripcionCaso: "Durante la ma\xF1ana, una persona encontr\xF3 varias huellas
     extra\xF1as cerca del jard\xEDn de una casa."
+  imagenFondo: {fileID: 0}
   testigos:
   - {fileID: 11400000, guid: db71637a5dca18242bfc6c479f6de818, type: 2}
   - {fileID: 11400000, guid: d419018fc0a0abc41955ba79dd884fd3, type: 2}
@@ -24,3 +25,6 @@ MonoBehaviour:
   descripcionMinijuego: "Durante la ma\xF1ana, una persona encontr\xF3 huellas extra\xF1as
     cerca del jard\xEDn de una casa.\n\nAnaliza las pistas encontradas y selecciona
     las tarjetas  que pueden ayudar a resolver el caso."
+  pistasMinijuego3: []
+  nivelesMinijuego4: []
+  textoVictoriaResumen: 

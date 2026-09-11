@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Valentina
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: Valentina
+  rolTestigo: Encargada de la biblioteca
+  fotoTarjeta: {fileID: -6037271228761976728, guid: c0b5978ce95ac2942a7c257244c6e275, type: 3}
+  fotoRetrato: {fileID: -6037271228761976728, guid: c0b5978ce95ac2942a7c257244c6e275, type: 3}
+  fotoDetalle: {fileID: -6037271228761976728, guid: c0b5978ce95ac2942a7c257244c6e275, type: 3}
+  textoTestimonio: "Antes del recreo pas\xE9 por la sala de actividades y vi el <b>trofeo
+    sobre una mesa</b>. Despu\xE9s regres\xE9 a la biblioteca para <b>ordenar unos
+    libros</b>."
+  textoTestimonioDetalle: "Valentina estuvo en la sala antes del recreo y luego regres\xF3
+    a la biblioteca."

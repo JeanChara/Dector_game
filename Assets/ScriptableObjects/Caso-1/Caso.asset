@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DatosCaso
   tituloCaso: "<b>CASO 1: La Desaparici\xF3n del Celular de Diego</b>"
   descripcionCaso: "Durante el receso, Diego dej\xF3 su celular sobre la mesa del
-    sal\xF3n. Al regresar, \xA1su tel\xE9fono hab\xEDa desaparecido! Cuatro personas
-    estuvieron cerca del sal\xF3n: Diego, Laura, Carlos y el Profesor Ram\xEDrez."
+    sal\xF3n. Al regresar, \xA1su tel\xE9fono hab\xEDa desaparecido!"
   imagenFondo: {fileID: 21300000, guid: b0ae33aaa5d89e443bedbe6aa7e6e84d, type: 3}
   testigos:
   - {fileID: 11400000, guid: 50087d116dbf63d47b774394c7598ada, type: 2}

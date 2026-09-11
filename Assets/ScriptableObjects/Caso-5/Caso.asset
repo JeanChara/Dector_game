@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1837a090c56f9244b39e08eb3ea4e40, type: 3}
   m_Name: Caso
   m_EditorClassIdentifier: Assembly-CSharp::DatosCaso
-  tituloCaso: <b>CASO 5</b>
+  tituloCaso: '<b>CASO 5: El Reloj desaparecido</b>'
   descripcionCaso: "\u201CDurante una reuni\xF3n familiar, un <b>reloj antiguo</b>
     desapareci\xF3 de la sala. "
+  imagenFondo: {fileID: 0}
   testigos:
   - {fileID: 11400000, guid: 4ae0f29646ae6234eb7726f9537e6eae, type: 2}
   - {fileID: 11400000, guid: 7951a82c1ebcd7a468392e4c0ec525d4, type: 2}
@@ -24,3 +25,6 @@ MonoBehaviour:
   descripcionMinijuego: "Un antiguo reloj familiar desapareci\xF3 durante una reuni\xF3n
     familiar.\n\nAnaliza las pistas encontradas y selecciona las tarjetas  que pueden
     ayudar a resolver el caso."
+  pistasMinijuego3: []
+  nivelesMinijuego4: []
+  textoVictoriaResumen: 

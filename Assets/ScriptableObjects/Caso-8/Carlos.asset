@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
   m_Name: Carlos
   m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
-  nombreTestigo: Carlos Mendoza
-  rolTestigo: Estudiante
-  fotoTarjeta: {fileID: 21300000, guid: 00160399fde2216438d685e8846dffb6, type: 3}
-  fotoRetrato: {fileID: 21300000, guid: 00160399fde2216438d685e8846dffb6, type: 3}
-  fotoDetalle: {fileID: 21300000, guid: 00160399fde2216438d685e8846dffb6, type: 3}
-  textoTestimonio: "Estuve rondando por los pasillos cerca del laboratorio durante
-    el receso con mi gorra roja puesta hacia atr\xE1s."
-  textoTestimonioDetalle: "\u201CEstaba en el pasillo durante el receso con mi gorra
-    roja. V\xED la puerta entreabierta y el celular solo sobre la mesa. Entr\xE9
-    a tomarlo y dej\xE9 mi mochila verde sobre una silla al huir.\u201D"
+  nombreTestigo: Carlos
+  rolTestigo: Repartidor
+  fotoTarjeta: {fileID: -5961944982578881703, guid: dc2928a33908baf4396369aa8478cfb8, type: 3}
+  fotoRetrato: {fileID: -5961944982578881703, guid: dc2928a33908baf4396369aa8478cfb8, type: 3}
+  fotoDetalle: {fileID: -5961944982578881703, guid: dc2928a33908baf4396369aa8478cfb8, type: 3}
+  textoTestimonio: "Ten\xEDa varios <b>paquetes en la camioneta</b>. Al llegar a
+    la calle, revis\xE9 r\xE1pidamente las <b>direcciones</b> y llev\xE9 uno de ellos
+    hasta una casa que ten\xEDa una <b>maceta grande junto a la entrada</b>."
+  textoTestimonioDetalle: "Carlos entreg\xF3 un paquete en una casa con una <b>maceta
+    grande en la entrada</b>."

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Elena
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: Elena
+  rolTestigo: Vecina
+  fotoTarjeta: {fileID: 7303866292825285654, guid: 7b6a8af147dba7f47b358464084d8f85, type: 3}
+  fotoRetrato: {fileID: 7303866292825285654, guid: 7b6a8af147dba7f47b358464084d8f85, type: 3}
+  fotoDetalle: {fileID: 7303866292825285654, guid: 7b6a8af147dba7f47b358464084d8f85, type: 3}
+  textoTestimonio: "Cuando llegu\xE9 a casa encontr\xE9 un <b>paquete frente a mi
+    puerta</b>. Not\xE9 que <b>mi nombre no aparec\xEDa en la etiqueta</b>, as\xED
+    que decid\xED esperar para hablar con el repartidor."
+  textoTestimonioDetalle: "Elena encontr\xF3 un <b>paquete que no ten\xEDa su nombre
+    en la etiqueta</b>"

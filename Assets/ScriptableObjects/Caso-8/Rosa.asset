@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7830ca0eb619eef46a3024a4ae0349c0, type: 3}
+  m_Name: Rosa
+  m_EditorClassIdentifier: Assembly-CSharp::DatosTestigo
+  nombreTestigo: Rosa
+  rolTestigo: Vecina
+  fotoTarjeta: {fileID: -2969926155844743094, guid: 713df1063bd8c7348b5cea37d14904ea, type: 3}
+  fotoRetrato: {fileID: -2969926155844743094, guid: 713df1063bd8c7348b5cea37d14904ea, type: 3}
+  fotoDetalle: {fileID: -2969926155844743094, guid: 713df1063bd8c7348b5cea37d14904ea, type: 3}
+  textoTestimonio: "Por la tarde escuch\xE9 al repartidor detenerse frente a mi casa.
+    Dej\xE9 la <b>puerta principal abierta</b> mientras esperaba un <b>paquete</b>,
+    pero el repartidor continu\xF3 hacia la casa de al lado."
+  textoTestimonioDetalle: "Rosa esperaba un <b>paquete</b> y dej\xF3 la <b>puerta
+    principal abierta</b>."

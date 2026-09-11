@@ -12,111 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1837a090c56f9244b39e08eb3ea4e40, type: 3}
   m_Name: Caso
   m_EditorClassIdentifier: Assembly-CSharp::DatosCaso
-  tituloCaso: "<b>CASO 1: La Desaparici\xF3n del Celular de Diego</b>"
-  descripcionCaso: "Durante el receso, Diego dej\xF3 su celular sobre la mesa del
-    sal\xF3n. Al regresar, \xA1su tel\xE9fono hab\xEDa desaparecido! Cuatro personas
-    estuvieron cerca del sal\xF3n: Diego, Laura, Carlos y el Profesor Ram\xEDrez."
+  tituloCaso: '<b>CASO 7: El trofeo desaparecido</b>'
+  descripcionCaso: "Durante la preparaci\xF3n de una competencia escolar, el trofeo
+    de la escuela desapareci\xF3 de la sala de actividades."
   imagenFondo: {fileID: 21300000, guid: b0ae33aaa5d89e443bedbe6aa7e6e84d, type: 3}
   testigos:
-  - {fileID: 11400000, guid: 50087d116dbf63d47b774394c7598ada, type: 2}
-  - {fileID: 11400000, guid: b4876182715717c4a97e60da00e9005f, type: 2}
-  - {fileID: 11400000, guid: d306fa8b9b7ef504d95a4fe7ea4c8144, type: 2}
-  - {fileID: 11400000, guid: c410501566f9244b39e08eb3ea4e1111, type: 2}
+  - {fileID: 11400000, guid: a4abe9dce27c0734bacd5ea36da27ba1, type: 2}
+  - {fileID: 11400000, guid: 537bc7a828acdb040be67ae612129f2c, type: 2}
+  - {fileID: 11400000, guid: 7b241bebcef15ea47be1e0416741f4ea, type: 2}
   tituloMinijuego: MINIJUEGO #4
   nombreMinijuego: Descarte de Rumores e Inconsistencias
   descripcionMinijuego: "Durante el receso, el celular de Diego desapareci\xF3 del
     sal\xF3n de clases.\n\nAnaliza los testimonios de los sospechosos y arrastra
     la nota con la contradicci\xF3n a la Papelera en cada nivel para descubrir la
     verdad del caso."
-  pistasMinijuego3:
-  - idPista: 1
-    textoPista: La puerta del laboratorio y la ventana estaban entreabiertas durante
-      el receso.
-    esCorrecta: 1
-  - idPista: 2
-    textoPista: "Laura vio a un estudiante con gorra roja al rev\xE9s entrar al sal\xF3n."
-    esCorrecta: 1
-  - idPista: 3
-    textoPista: "Hab\xEDa un dibujo del sistema solar en el pizarr\xF3n principal."
-    esCorrecta: 0
-  - idPista: 4
-    textoPista: "Se encontr\xF3 una mochila verde oliva sobre una silla cerca de
-      la mesa de Diego."
-    esCorrecta: 1
-  - idPista: 5
-    textoPista: "Diego jug\xF3 f\xFAtbol durante la primera hora de clase."
-    esCorrecta: 0
-  nivelesMinijuego4:
-  - nivel: 1
-    persona: "Diego Ram\xEDrez"
-    pregunta: "Arrastra la nota con la contradicci\xF3n de Diego Ram\xEDrez a la
-      Papelera"
-    opciones:
-    - id: 1
-      texto: "Diego dej\xF3 su celular sobre su mesa antes de salir al recreo."
-      esContradiccion: 0
-      explicacion: 
-    - id: 2
-      texto: "Cuando regres\xF3 al sal\xF3n, su celular ya no estaba en la mesa."
-      esContradiccion: 0
-      explicacion: 
-    - id: 3
-      texto: "Diego guard\xF3 su celular dentro de una cartuchera de metal antes
-        de salir."
-      esContradiccion: 1
-      explicacion: "Diego dej\xF3 su celular expuesto sobre la mesa, no en una cartuchera."
-    - id: 4
-      texto: Diego estuvo buscando su celular muy preocupado al volver.
-      esContradiccion: 0
-      explicacion: 
-  - nivel: 2
-    persona: "Laura S\xE1nchez"
-    pregunta: "Arrastra la nota con la contradicci\xF3n de Laura S\xE1nchez a la
-      Papelera"
-    opciones:
-    - id: 1
-      texto: "Laura vio que Diego le regal\xF3 su celular a un estudiante m\xE1s
-        peque\xF1o."
-      esContradiccion: 1
-      explicacion: "Laura declar\xF3 que vio entrar a un compa\xF1ero con gorra roja
-        y mochila verde, no a Diego regalando su tel\xE9fono."
-    - id: 2
-      texto: Laura iba caminando hacia el patio durante el recreo.
-      esContradiccion: 0
-      explicacion: 
-    - id: 3
-      texto: "Laura vio a un estudiante con gorra roja entrar r\xE1pidamente al sal\xF3n."
-      esContradiccion: 0
-      explicacion: 
-    - id: 4
-      texto: "Laura escuch\xF3 despu\xE9s que Diego estaba buscando su celular."
-      esContradiccion: 0
-      explicacion: 
-  - nivel: 3
-    persona: Carlos Mendoza (CULPABLE)
-    pregunta: "Arrastra la nota con la contradicci\xF3n delatadora de Carlos Mendoza
-      a la Papelera"
-    opciones:
-    - id: 1
-      texto: "Carlos estuvo cerca del sal\xF3n con su gorra roja puesta al rev\xE9s."
-      esContradiccion: 0
-      explicacion: 
-    - id: 2
-      texto: "La mochila verde de Carlos fue encontrada sobre una silla del sal\xF3n."
-      esContradiccion: 0
-      explicacion: 
-    - id: 3
-      texto: "Carlos afirma que estuvo jugando b\xE1squetbol todo el receso y no
-        tiene ninguna mochila verde."
-      esContradiccion: 1
-      explicacion: "\xA1Contradicci\xF3n delatadora! Laura lo vio entrar con su gorra
-        roja y su mochila verde qued\xF3 en la silla del sal\xF3n."
-    - id: 4
-      texto: Carlos estuvo rondando por los pasillos cerca del laboratorio.
-      esContradiccion: 0
-      explicacion: 
-  textoVictoriaResumen: "\xA1Excelente trabajo de investigaci\xF3n!\n\nHas desmontado
-    la red de rumores y desmentido la contradicci\xF3n de Carlos Mendoza:\n\u2022
-    Laura lo vio entrar al sal\xF3n con su gorra roja puesta al rev\xE9s.\n\u2022
-    Olvid\xF3 su mochila verde oliva sobre una silla del laboratorio.\n\n\xA1Caso
-    #1 resuelto con \xE9xito!"
+  pistasMinijuego3: []
+  nivelesMinijuego4: []
+  textoVictoriaResumen: 

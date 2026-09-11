@@ -36,20 +36,20 @@ MonoBehaviour:
   - numeroCaso: CASO 05
     datosCaso: {fileID: 11400000, guid: d8f247224a01acf46b991f58cc3cb9ad, type: 2}
     nombreEscena: EscenaCaso_05
-    colorTema: {r: 0.85, g: 0.28, b: 0.06, a: 1}
-    colorBoton: {r: 0.97, g: 0.4, b: 0.03, a: 1}
+    colorTema: {r: 0.05882351, g: 0.7931829, b: 0.8509804, a: 1}
+    colorBoton: {r: 0.031372573, g: 0.6364416, b: 0.96862745, a: 1}
   - numeroCaso: CASO 06
     datosCaso: {fileID: 11400000, guid: 74343d7cba12c8643b9463e66fcd05d2, type: 2}
     nombreEscena: EscenaCaso_06
-    colorTema: {r: 0.85, g: 0.28, b: 0.06, a: 1}
-    colorBoton: {r: 0.97, g: 0.4, b: 0.03, a: 1}
+    colorTema: {r: 0.8509804, g: 0.05882351, b: 0.7466786, a: 1}
+    colorBoton: {r: 0.5566038, g: 0.018378438, b: 0.5402879, a: 1}
   - numeroCaso: CASO 07
-    datosCaso: {fileID: 11400000, guid: 4116f8ab3959a9d47910bee0fce8e566, type: 2}
+    datosCaso: {fileID: 11400000, guid: ec6366c7fabbff640a01bc7acc611b45, type: 2}
     nombreEscena: EscenaCaso_07
     colorTema: {r: 0, g: 0.02162028, b: 0.690566, a: 1}
     colorBoton: {r: 0.2924527, g: 0.41976193, b: 1, a: 1}
   - numeroCaso: CASO 08
-    datosCaso: {fileID: 11400000, guid: 4116f8ab3959a9d47910bee0fce8e566, type: 2}
+    datosCaso: {fileID: 11400000, guid: 4755b5d31c19fa94b8f652d20ee88c9f, type: 2}
     nombreEscena: EscenaCaso_08
     colorTema: {r: 0.5451629, g: 0.1177857, b: 0.8792453, a: 1}
     colorBoton: {r: 0.5407864, g: 0.35552153, b: 0.6301887, a: 1}
